@@ -1,0 +1,17 @@
+1. The first attempt does not print an X, it prints the address value  0x7c00 + offset if it is an ASCII printable character.
+
+The second attempt prints an X, because the the_secret reference (0x7c00 + offset) contains the ASCII letter X.
+
+The third attempt does not print an X, because 0x7c00 is added to the the_secret reference (0x7c00 + offset), and the resulting address does not contain the ASCII letter X.
+
+The fourth attempt prints an X; it makes use of an absolute address.
+
+2.'CBA'.
+At address 0x8000 - (3 times 2 bytes = 6 bytes) = 0x7ffa.
+The stack grows downwards from bp 0x8000, each value pushed onto the stack is 16 bit, the 8-bit ASCI letters are padded with zeroes by the assembler.
+
+3. See also boot_sect5.asm 
+
+4. See also boot_sect_print_string.asm and print_string.asm
+
+5. See also boot_sect_print_hex.asm and print_hex.asm
